@@ -17,12 +17,7 @@ const LandingSection = () => {
           Belanja
         </Button>
       </Stack>
-      <Image
-        position='absolute'
-        top='100'
-        right='100'
-        src='assets/heroshoe.png'
-      />
+      <Image src='assets/heroshoe.png' />
     </HStack>
   );
 };
