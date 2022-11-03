@@ -3,8 +3,8 @@ import { Button, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
 const LandingSection = () => {
   return (
-    <HStack justifyContent='center' height='60vh' mx='10%'>
-      <Stack spacing='24px' mr='50%'>
+    <HStack>
+      <Stack spacing='24px'>
         <Heading fontWeight='bold' fontSize='96px'>
           Shoespedia
         </Heading>
