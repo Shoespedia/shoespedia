@@ -1,6 +1,6 @@
 import Page from '../components/Page';
 import LandingSection from '../components/LandingSection';
-import { Box, HStack, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Box, Center, HStack, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
 import SellerCard from '../components/SellerCard';
 import ProductCard from '../components/ProductCard';
@@ -16,7 +16,7 @@ export default function Home() {
           <SellerCard
             img='assets/sellercard.png'
             title='Seller'
-            text='Titipkan sepatumu untuk dijual keseluruh indonesia, menjangkau keseluruhan dan terjaga.'
+            text='Titipkan sepatumu untuk dijual keseluruh indonesia.'
             button='Titip'
           />
           <SellerCard
@@ -41,36 +41,39 @@ export default function Home() {
             Produk Lainnya {'>>>'}
           </Text>
         </HStack>
-        <SimpleGrid
-          spacing={0}
-          columns={{ base: 1, md: 3, xl: 4 }}
-          px={{ base: '0', md: '10vw' }}
-        >
-          <ProductCard
-            img='assets/product1.png'
-            brand='Jordan'
-            name="Air Jordan High OG 'Taxi'"
-            price='$255'
-          />
-          <ProductCard
-            img='assets/product2.png'
-            brand='Jordan'
-            name="Air Jordan Low XD  'Buzz'"
-            price='$290'
-          />
-          <ProductCard
-            img='assets/product3.png'
-            brand='Jordan'
-            name='Essential “ White - Off “'
-            price='$475'
-          />
-          <ProductCard
-            img='assets/product4.png'
-            brand='Jordan'
-            name="Air Jordan High OG 'Taxi'"
-            price='$255'
-          />
-        </SimpleGrid>
+        <Center>
+          <SimpleGrid
+            mt='50px'
+            spacing={8}
+            columns={{ base: 1, md: 2, xl: 3 }}
+            px={{ base: '0', md: '10vw' }}
+          >
+            <ProductCard
+              img='assets/product1.png'
+              brand='Jordan'
+              name="Air Jordan High OG 'Taxi'"
+              price='$255'
+            />
+            <ProductCard
+              img='assets/product2.png'
+              brand='Jordan'
+              name="Air Jordan Low XD  'Buzz'"
+              price='$290'
+            />
+            <ProductCard
+              img='assets/product3.png'
+              brand='Jordan'
+              name='Essential “ White - Off “'
+              price='$475'
+            />
+            <ProductCard
+              img='assets/product4.png'
+              brand='Jordan'
+              name="Air Jordan High OG 'Taxi'"
+              price='$255'
+            />
+          </SimpleGrid>
+        </Center>
       </Stack>
     </Page>
   );

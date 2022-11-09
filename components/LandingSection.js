@@ -1,11 +1,22 @@
 import React from 'react';
-import { Button, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Image,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 
 const LandingSection = () => {
   return (
-    <HStack alignItems='start'>
-      <Stack spacing='24px'>
-        <Heading fontWeight='bold' fontSize='96px'>
+    <HStack
+      alignItems='start'
+      flexDirection={{ base: 'column-reverse', xl: 'row' }}
+    >
+      <Stack spacing='24px' alignItems={{ base: 'center', xl: 'flex-start' }}>
+        <Heading fontWeight='bold' fontSize={{ base: '64px', xl: '96px' }}>
           Shoespedia
         </Heading>
         <Text mt='20px' width='80%'>
@@ -14,7 +25,7 @@ const LandingSection = () => {
           di percaya
         </Text>
         <Button
-          width='20%'
+          width={{ base: '60%', xl: '20%' }}
           mt='20px'
           bg='#D9D9D9'
           borderRadius='100px'
@@ -23,7 +34,9 @@ const LandingSection = () => {
           Belanja
         </Button>
       </Stack>
-      <Image src='assets/heroshoe.png' />
+      <Box>
+        <Image src='assets/heroshoe.png' alt='shoes' />
+      </Box>
     </HStack>
   );
 };
