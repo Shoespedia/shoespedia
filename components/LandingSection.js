@@ -3,7 +3,7 @@ import { Button, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
 const LandingSection = () => {
   return (
-    <HStack>
+    <HStack alignItems='start'>
       <Stack spacing='24px'>
         <Heading fontWeight='bold' fontSize='96px'>
           Shoespedia
@@ -13,7 +13,13 @@ const LandingSection = () => {
           yang dapat di akses di seluruh indonesa dengan cepat, mudah, dan dapat
           di percaya
         </Text>
-        <Button width='20%' mt='20px' bg='#D9D9D9' borderRadius='100px'>
+        <Button
+          width='20%'
+          mt='20px'
+          bg='#D9D9D9'
+          borderRadius='100px'
+          fontWeight='bold'
+        >
           Belanja
         </Button>
       </Stack>
