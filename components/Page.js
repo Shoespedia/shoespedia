@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 
 export default function Page({ title, metaDesc, children }) {
@@ -15,7 +16,9 @@ export default function Page({ title, metaDesc, children }) {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main>{children}</main>
+      <main>
+        <Box bg='#F9F9F9'>{children}</Box>
+      </main>
     </div>
   );
 }
