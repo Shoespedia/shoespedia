@@ -3,7 +3,7 @@ import React from 'react';
 
 const SellerCard = ({ img, title, text, button }) => {
   return (
-    <Box bg='#EEE' px='32px' py='56px' w='350px'>
+    <Box bg='#EEE' px='32px' py='56px' w='350px' height='500px'>
       <Image src={img} />
       <Heading fontSize='20px' mt='8px'>
         {title}

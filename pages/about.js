@@ -10,7 +10,7 @@ export default function Home() {
 
       <Stack
         spacing='50px'
-        px={{ base: '0', md: '10vw' }}
+        px={{ base: '64px', md: '10vw' }}
         minH='calc(100vh - 180px)'
       >
         <AboutSection />

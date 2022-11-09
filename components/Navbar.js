@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <HStack
       justifyContent='space-between'
-      px={{ base: '0', md: '10vw' }}
+      px={{ base: '20px', md: '10vw' }}
       shadow='md'
       mb='100px'
       h='80px'
     >
       <Image src='assets/logo.png' borderRadius='50%' width='64px' />
-      <HStack spacing={8}>
+      <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
         <Link href='/'>
           <a>
             <Text>Home</Text>
