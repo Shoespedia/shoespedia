@@ -15,6 +15,7 @@ const ProductList = ({ products }) => {
           products.map((product) => (
             <ProductCard
               key={product.sys.id}
+              id={product.sys.id}
               img={product.fields.images.url[0]}
               brand={product.fields.brand}
               name={product.fields.name}

@@ -1,9 +1,9 @@
-import { Spacer, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import Page from '../components/Page';
-import ProductList from '../components/ProductList';
-import Sidebar from '../components/Sidebar';
+import Navbar from '../../components/Navbar';
+import Page from '../../components/Page';
+import ProductList from '../../components/ProductList';
+import Sidebar from '../../components/Sidebar';
 
 const Products = ({ products }) => {
   const [filter, setFilter] = useState('all');
