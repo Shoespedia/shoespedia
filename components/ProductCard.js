@@ -1,10 +1,10 @@
-import { Box, Button, Heading, Image, Text, Center } from '@chakra-ui/react';
+import { Heading, Image, Text, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 const ProductCard = ({ img, brand, name, price }) => {
   return (
-    <Box bg='#FFF' px='18px' py='35px' w='350px' textAlign='center'>
-      <Image src={img} alt={name} />
+    <Stack bg='#FFF' p={4} w='280px' textAlign='center' alignItems='center'>
+      <Image src={img} alt={name} w='200px' />
       <Heading fontSize='28px' mt='8px'>
         {brand}
       </Heading>
@@ -12,7 +12,7 @@ const ProductCard = ({ img, brand, name, price }) => {
         {' '}
         {brand} {name} <br /> {price}
       </Text>
-    </Box>
+    </Stack>
   );
 };
 

@@ -2,13 +2,13 @@ import { HStack, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = ({ noMb }) => {
   return (
     <HStack
       justifyContent='space-between'
       px={{ base: '20px', md: '10vw' }}
       shadow='md'
-      mb='100px'
+      mb={noMb ? '0' : '100px'}
       h='80px'
     >
       <Image src='assets/logo.png' borderRadius='50%' width='64px' />
