@@ -25,11 +25,16 @@ const ProductDetail = ({ product }) => {
         description: 'Tidak ada ukuran yang dipilih',
         status: 'warning',
       });
-      return;
+    } else {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const newCart = [...cart, { ...product.fields, size: selectedSize }];
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      toast({
+        title: 'Success',
+        description: 'Produk berhasil ditambahkan ke keranjang',
+        status: 'success',
+      });
     }
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const newCart = [...cart, { ...product.fields, size: selectedSize }];
-    localStorage.setItem('cart', JSON.stringify(newCart));
   };
 
   return (
