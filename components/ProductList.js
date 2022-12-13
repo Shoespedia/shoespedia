@@ -1,8 +1,8 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import React from 'react';
 import ProductCard from './ProductCard';
 
-const ProductList = () => {
+const ProductList = ({ products }) => {
   return (
     <Box>
       <SimpleGrid
@@ -11,30 +11,19 @@ const ProductList = () => {
         px={{ base: '0', md: '10vw' }}
         mt='30px'
       >
-        <ProductCard
-          img='assets/product1.png'
-          brand='Jordan'
-          name="Air Jordan High OG 'Taxi'"
-          price='$255'
-        />
-        <ProductCard
-          img='assets/product2.png'
-          brand='Jordan'
-          name="Air Jordan Low XD  'Buzz'"
-          price='$290'
-        />
-        <ProductCard
-          img='assets/product3.png'
-          brand='Jordan'
-          name='Essential “ White - Off “'
-          price='$475'
-        />
-        <ProductCard
-          img='assets/product4.png'
-          brand='Jordan'
-          name="Air Jordan High OG 'Taxi'"
-          price='$255'
-        />
+        {products?.length > 0 ? (
+          products.map((product) => (
+            <ProductCard
+              key={product.sys.id}
+              img={product.fields.images.url[0]}
+              brand={product.fields.brand}
+              name={product.fields.name}
+              price={product.fields.price}
+            />
+          ))
+        ) : (
+          <Text>Belum ada produk.</Text>
+        )}
       </SimpleGrid>
     </Box>
   );

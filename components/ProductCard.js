@@ -1,4 +1,5 @@
 import { Heading, Image, Text, Stack } from '@chakra-ui/react';
+import formatPrice from '../utils/formatPrice';
 import React from 'react';
 
 const ProductCard = ({ img, brand, name, price }) => {
@@ -10,7 +11,7 @@ const ProductCard = ({ img, brand, name, price }) => {
       </Heading>
       <Text fontSize='16px' mt='8px'>
         {' '}
-        {brand} {name} <br /> {price}
+        {brand} {name} <br /> {formatPrice(price)}
       </Text>
     </Stack>
   );

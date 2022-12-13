@@ -4,8 +4,9 @@ import { Box, Center, HStack, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
 import SellerCard from '../components/SellerCard';
 import ProductCard from '../components/ProductCard';
+import ProductList from '../components/ProductList';
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <Page title='Shoespedia'>
       <Navbar />
@@ -42,39 +43,27 @@ export default function Home() {
           </Text>
         </HStack>
         <Center>
-          <SimpleGrid
-            mt='50px'
-            spacing={8}
-            columns={{ base: 1, md: 2, xl: 3 }}
-            px={{ base: '0', md: '10vw' }}
-          >
-            <ProductCard
-              img='assets/product1.png'
-              brand='Jordan'
-              name="Air Jordan High OG 'Taxi'"
-              price='$255'
-            />
-            <ProductCard
-              img='assets/product2.png'
-              brand='Jordan'
-              name="Air Jordan Low XD  'Buzz'"
-              price='$290'
-            />
-            <ProductCard
-              img='assets/product3.png'
-              brand='Jordan'
-              name='Essential “ White - Off “'
-              price='$475'
-            />
-            <ProductCard
-              img='assets/product4.png'
-              brand='Jordan'
-              name="Air Jordan High OG 'Taxi'"
-              price='$255'
-            />
-          </SimpleGrid>
+          <ProductList products={products} />
         </Center>
       </Stack>
     </Page>
   );
+}
+
+let client = require('contentful').createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_TOKEN,
+});
+
+export async function getServerSideProps() {
+  let data = await client.getEntries({
+    content_type: 'shoe',
+    limit: 6,
+  });
+
+  return {
+    props: {
+      products: data.items,
+    },
+  };
 }
