@@ -28,7 +28,12 @@ const ProductDetail = ({ product }) => {
     } else {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const newCart = [...cart, { ...product.fields, size: selectedSize }];
+
+      let cartLength = parseInt(localStorage.getItem('cartLength')) || 0;
+      cartLength += 1;
+
       localStorage.setItem('cart', JSON.stringify(newCart));
+      localStorage.setItem('cartLength', cartLength);
       toast({
         title: 'Success',
         description: 'Produk berhasil ditambahkan ke keranjang',
@@ -54,7 +59,7 @@ const ProductDetail = ({ product }) => {
           ))}
         </SimpleGrid>
       </Stack>
-      <Flex direction='column' pt={{ md: 16 }}>
+      <Flex direction='column' pt={{ md: 16 }} width='40%'>
         <Text color='red.500' fontSize='md' fontWeight='bold'>
           {product.fields.brand}
         </Text>

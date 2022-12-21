@@ -9,6 +9,7 @@ const Products = ({ products }) => {
   const [filter, setFilter] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [mounted, setMounted] = useState(false);
+  const [search, setSearch] = useState('');
 
   let client = require('contentful').createClient({
     space: 'ylcybvya0rbg',
@@ -20,7 +21,12 @@ const Products = ({ products }) => {
       let data = await client.getEntries({
         content_type: 'shoe',
       });
-      return data;
+      if (!search) return data.items;
+      else {
+        return data.items.filter((item) =>
+          item.fields.name.toLowerCase().includes(search.toLowerCase())
+        );
+      }
     } else {
       let data = await client.getEntries({
         content_type: 'shoe',
@@ -33,18 +39,18 @@ const Products = ({ products }) => {
   useEffect(() => {
     if (mounted) {
       getData(filter).then((data) => {
-        setFilteredProducts(data.items);
+        setFilteredProducts(data);
       });
     } else {
       setMounted(true);
     }
-  }, [filter]);
+  }, [filter, search]);
 
   return (
     <Page title='Products'>
       <Navbar noMb />
       <Stack direction={{ base: 'column', lg: 'row' }} minH='100vh'>
-        <Sidebar setFilter={setFilter} />
+        <Sidebar setFilter={setFilter} setSearch={setSearch} />
         <ProductList products={filteredProducts} />
       </Stack>
     </Page>

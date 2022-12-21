@@ -19,12 +19,14 @@ export default function Home({ products }) {
             title='Seller'
             text='Titipkan sepatumu untuk dijual keseluruh indonesia.'
             button='Titip'
+            url='/about'
           />
           <SellerCard
             img='assets/buyercard.png'
             title='Buyer'
             text='Lihat dan Amati Sepatu Terbaru dari Consign ini!'
             button='Beli'
+            url='/products'
           />
         </HStack>
       </Stack>

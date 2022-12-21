@@ -8,7 +8,7 @@ const Navbar = ({ noMb }) => {
       justifyContent='space-between'
       px={{ base: '20px', md: '10vw' }}
       shadow='md'
-      mb={noMb ? '0' : '100px'}
+      mb={noMb ? '0' : '72px'}
       h='80px'
     >
       <Image src='assets/logo.png' borderRadius='50%' width='64px' />
@@ -28,9 +28,9 @@ const Navbar = ({ noMb }) => {
             <Text>Products</Text>
           </a>
         </Link>
-        <Link href='/login'>
+        <Link href='/cart'>
           <a>
-            <Text>Login</Text>
+            <Text>Cart</Text>
           </a>
         </Link>
       </HStack>
